@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML Calculator</title> 
+
+	<!-- For styling -->
+	<style> 
+	body{
+		background-color: blue;
+	}
+		table { 
+			border: 1px solid black; 
+			margin-left: auto; 
+			margin-right: auto; 
+		} 
+		
+		input[type="button"] { 
+			width: 100%; 
+			padding: 20px 40px; 
+			background-color: green; 
+			color: white; 
+			font-size: 24px; 
+			font-weight: bold; 
+			border: none; 
+			border-radius: 5px; 
+		} 
+		
+		input[type="text"] { 
+			padding: 20px 30px; 
+			font-size: 24px; 
+			font-weight: bold; 
+			border: none; 
+			border-radius: 5px; 
+			border: 2px solid black; 
+		} 
+	</style> 
+</head> 
+
+<body> 
+		<center>
+			<h1>Calculator</h1>
+		</center>
+	<!-- Create table -->
+	<table id="calcu"> 
+		<tr> 
+			<td colspan="3"> 
+				<input type="text" id="result"> 
+			</td> 
+			<td><input id="c" type="button" value="c" onclick="removelast()"></td> 
+		</tr> 
+
+		<tr> 
+			<td><input id="one" type="button" value="1" onclick="displaynumber(1)"></td> 
+			<td><input id="two" type="button" value="2" onclick="displaynumber(2)"></td> 
+			<td><input id="three" type="button" value="3" onclick="displaynumber(3)"></td> 
+			<td><input id="by" type="button" value="/" onclick="displaynumber('/')"></td> 
+		</tr> 
+		<tr> 
+			<td><input id="four" type="button" value="4" onclick="displaynumber(4)"></td> 
+			<td><input id="five" type="button" value="5" onclick="displaynumber(5)"></td> 
+			<td><input id="six" type="button" value="6" onclick="displaynumber(6)"></td> 
+			<td><input id="star" type="button" value="*" onclick="displaynumber('*')"></td> 
+		</tr> 
+		<tr> 
+			<td><input id="seven" type="button" value="7" onclick="displaynumber(7)"></td> 
+			<td><input id="eight" type="button" value="8" onclick="displaynumber(8)"></td> 
+			<td><input id="nine" type="button" value="9" onclick="displaynumber(9)"></td> 
+			<td><input id="sub" type="button" value="-" onclick="displaynumber('-')"></td> 
+		</tr> 
+		<tr> 
+			<td><input id="zero" type="button" value="0" onclick="displaynumber(0)"></td> 
+			<td><input id="dote" type="button" value="." onclick="displaynumber('.')"></td> 
+			<td><input id="equal" type="button" value="=" onclick="evaluvaate()"></td> 
+			<td><input id="add" type="button" value="+" onclick="displaynumber('+')"></td> 
+		</tr> 
+		<tr>
+			<td><input id="ac" type="button" value="AC" onclick="clearinput()"></td>
+		</tr>
+	</table> 
+
+
+	<script>
+		function displaynumber(num){
+			result.value=result.value+num
+		}
+
+		// 2.clear the text field
+		function clearinput(){
+			result.value=""
+		}
+
+
+		// 3.evaluvate expression
+
+		// function evaluvaate(){
+		// 	exp=result.value    //7*8    // because it is considered as string
+		// 	output=eval(result.value)
+		// 	result.value=output
+		// }
+
+		//or
+			function evaluvaate(){
+				result.value=eval(result.value)
+			}
+
+			// 4. remove last character
+			function removelast(){
+				result.value=result.value.slice(0,-1)  //slice(start,end)  //strat il ninne ethra ponum , endil ninne etra ponnam
+			}
+
+	</script>
+</body> 
+
+</html> 
